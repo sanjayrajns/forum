@@ -13,7 +13,7 @@ export default function Footer() {
                 {SITE.name}
               </span>
               <span className="block text-[10px] font-sans uppercase tracking-[0.2em] text-gold font-semibold mt-0.5">
-                Industry-Academia Interaction Foundation
+                Industry-Academia Interaction Forum
               </span>
             </Link>
             <p className="text-sm leading-relaxed max-w-sm text-ivory/70 font-sans">
@@ -105,7 +105,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col md:flex-row items-center justify-between text-xs text-ivory/50 font-sans">
           <p>
-            &copy; {new Date().getFullYear()} Industry-Academia Interaction Foundation. All rights reserved.
+            &copy; {new Date().getFullYear()} Industry-Academia Interaction Forum. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0">
             <Link href="/programs" className="hover:text-ivory transition-colors">

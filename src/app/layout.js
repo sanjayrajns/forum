@@ -23,7 +23,7 @@ export const viewport = {
 };
 
 export const metadata = {
-  title: "IAIF — Industry-Academia Interaction Foundation",
+  title: "IAIF — Industry-Academia Interaction Forum",
   description:
     "Bridging Industry and Research Experts with Academia — a collective of distinguished professionals volunteering expertise to skill students to be industry-ready.",
   keywords: [
@@ -42,7 +42,7 @@ export const metadata = {
   authors: [{ name: "IAIF" }],
   robots: "index, follow",
   openGraph: {
-    title: "IAIF — Industry-Academia Interaction Foundation",
+    title: "IAIF — Industry-Academia Interaction Forum",
     description:
       "Bridging classroom learning with industry expectations to empower students to be industry-ready capable leaders.",
     type: "website",
@@ -55,7 +55,7 @@ export default function RootLayout({ children }) {
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "NGO",
-    name: "Industry-Academia Interaction Foundation",
+    name: "Industry-Academia Interaction Forum",
     alternateName: "IAIF",
     url: "https://iaif.org",
     logo: "https://iaif.org/images/logo.png",

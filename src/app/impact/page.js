@@ -1,33 +1,9 @@
-"use client";
-
-import { useState } from "react";
 import StatCounter from "@/components/StatCounter";
 import ValueProposition from "@/components/ValueProposition";
 import SectionReveal from "@/components/SectionReveal";
 import { IMPACT_STATS, EXECUTION_STRATEGY } from "@/lib/constants";
 
 export default function ImpactPage() {
-  const [activeFaq, setActiveFaq] = useState(null);
-
-  const faqs = [
-    {
-      q: "Who qualifies to join as a Volunteer Expert?",
-      a: "Professionals currently holding distinguished positions in government bodies, academia, or global industries (including MNCs) who are passionate about bridging the gap between industry and academia, and volunteering their expertise.",
-    },
-    {
-      q: "How do IAIF micro-credentials carry academic weight?",
-      a: "We partner with autonomous colleges and universities to integrate 4-week industry-led micro-modules into the elective or assessment structures of current courses, ensuring students receive credit-equivalence for applied projects.",
-    },
-    {
-      q: "Is IAIF affiliated with any political organization?",
-      a: "No. IAIF is an independent, non-profit public trust focused strictly on technical excellence, professional integrity, and empowering students for entrepreneurship and research.",
-    },
-    {
-      q: "How can an institution register with IAIF?",
-      a: "Colleges and universities can register through our Get Involved page. We work with academic institutions to bring industry expertise to campus through lectures, hackathons, project-based learning, and curriculum alignment.",
-    },
-  ];
-
   return (
     <div className="pt-24 space-y-0">
       {/* Page Header */}
@@ -287,44 +263,6 @@ export default function ImpactPage() {
         </div>
       </section>
 
-      {/* FAQ Borderless Accordion */}
-      <section className="py-16 md:py-32 bg-ivory overflow-hidden">
-        <div className="max-w-3xl mx-auto px-6 space-y-12">
-          <div className="text-center space-y-4">
-            <span className="text-xs font-sans uppercase tracking-[0.2em] text-terracotta font-bold">
-              Frequently Asked Questions
-            </span>
-            <h2 className="font-serif text-4xl md:text-5xl font-medium text-navy tracking-tight">
-              Common Questions
-            </h2>
-          </div>
-
-          <div className="divide-y divide-hairline">
-            {faqs.map((faq, index) => {
-              const isOpen = activeFaq === index;
-              return (
-                <div key={index} className="py-6 first:pt-0 last:pb-0">
-                  <button
-                    onClick={() => setActiveFaq(isOpen ? null : index)}
-                    className="w-full flex justify-between items-center text-left py-2 focus:outline-none">
-                    <span className="font-serif text-xl font-medium text-navy tracking-tight hover:text-gold transition-colors">
-                      {faq.q}
-                    </span>
-                    <span className="text-gold text-2xl font-light">
-                      {isOpen ? "−" : "+"}
-                    </span>
-                  </button>
-                  {isOpen && (
-                    <p className="text-sm font-sans text-ink/75 leading-relaxed font-light mt-3 pl-2 border-l border-gold/30 animate-fade-in">
-                      {faq.a}
-                    </p>
-                  )}
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
     </div>
   );
 }

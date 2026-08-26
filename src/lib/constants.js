@@ -5,7 +5,7 @@
 
 export const SITE = {
   name: "IAIF",
-  fullName: "Industry-Academia Interaction Foundation",
+  fullName: "Industry-Academia Interaction Forum",
   tagline: "Bridging Industry and Research Experts with Academia",
   heroSubline:
     "Empowering students for Entrepreneurship and Research — a collective of distinguished professionals volunteering expertise to skill students to be industry ready.",
@@ -122,11 +122,11 @@ export const PROGRAMS = [
   {
     id: "ideathons",
     title: "Ideathons",
-    image: null,
+    image: "/images/program-ideathon.jpg",
     summary:
       "Rapid brainstorming sessions where students tackle pressing social and national challenges.",
     description:
-      'Encouraging students to find innovative solutions to social and technical problems facing the "end-user" in Bharat\'s context. Fostering a culture of "Bharat-First" problem-solving.',
+      "Students work on real-world problem statements drawn from industry and society, exploring solution options, refining their pitch competence, and building creation skills. The format fosters soft-skill improvements including teamwork, time management, and structured ideation — preparing students to think like innovators and communicate like professionals.",
     category: "terracotta",
   },
   {
@@ -154,59 +154,59 @@ export const PROGRAMS = [
     title: "Expert Lecture Series",
     image: "/images/program-lecture.png",
     summary:
-      "Industry stalwarts discussing emerging trends, corporate ethics, and professional integrity.",
+      "Industry experts discussing emerging trends, corporate ethics, and professional integrity.",
     description:
-      "Regular sessions featuring industry stalwarts who discuss emerging trends, corporate ethics, and the importance of integrity in professional life. Guest lectures focusing on emerging technologies and social sectors.",
+      "Regular sessions featuring industry experts who discuss emerging trends, corporate ethics, and the importance of integrity in professional life. Guest lectures focusing on emerging technologies and social sectors.",
     category: "sage",
   },
   {
     id: "curriculum",
     title: "Curriculum Alignment",
-    image: null,
+    image: "/images/program-circulum.jpg",
     summary:
       "Ensuring course content is functionally relevant to current job markets.",
     description:
-      "We actively support academic boards by serving as industry representatives to ensure that course content is not just theoretical, but functionally relevant to current job markets.",
+      "We actively support academic boards by serving as industry representatives to align course syllabi with current market skill requirements. Our outcomes include: functional-prototype creation, character-driven student qualities, improved skill-match scores for campus recruitment, higher internship-to-conversion rates, and stronger certificate-pass-rate outcomes. Industry tools, frameworks, case studies, datasets, and practical projects are embedded directly into the academic framework.",
     category: "terracotta",
   },
   {
     id: "faculty",
     title: "Faculty Development",
-    image: null,
+    image: "/images/faculty-development-image.png",
     summary:
-      "Continuous education workshops to keep faculty abreast of industrial processes.",
+      "On Demand education workshops to keep faculty abreast of modern industry trends.",
     description:
-      "Continuous education workshops for faculty members to help them stay abreast of the latest industrial processes.",
+      "Our On Demand faculty development programs provide instructors with deep insights into emerging industry technologies, modern management frameworks, and current corporate expectations. By delivering these workshops, we empower faculty to modernize their teaching methodology, incorporate live industry projects, and better mentor students for competitive career landscapes — ultimately boosting the institution’s overall quality of education and research output.",
     category: "sage",
   },
   {
     id: "ethics",
     title: "Ethics & Professional Development",
-    image: null,
+    image: "/images/program-ethics.png",
     summary:
       "Modules instilling professional integrity and ethical conduct for the global marketplace.",
     description:
-      "Our mentorship emphasizes ethical behaviour and corporate integrity as the foundation of a successful career. Integrated modules that instill a commitment to ethical conduct and professional excellence in the global marketplace.",
+      "Our integrated modules drive measurable improvements in ethical reasoning, decision-making, civic engagement, moral judgment, empathy, and integrity. Students develop a principled professional identity rooted in accountability and national purpose — emerging as leaders who not only excel technically but conduct themselves with uncompromising ethical standards in every professional context.",
     category: "terracotta",
   },
   {
     id: "reading",
     title: "Culture of Reading",
-    image: null,
+    image: "/images/program-culture-reading.png",
     summary:
-      "Collaborating with RBCL and Geeta-Press for book reading and self-study enablement.",
+      "Building a vibrant, active community of readers and converting reading into tangible community learning.",
     description:
-      "We collaborate with non-profit NGOs like Rashtriya Book Circulating Library (RBCL), Geeta-Press Gorakhpur, Swayam-NPTEL for promotion of books reading, self-study, and enablement on personality development, Indian civilization and culture.",
+      "Our program fosters a structured reading environment that translates into improved analytical capacity, expanded worldview, and enhanced professional communication. By collaborating with renowned libraries and knowledge repositories, we facilitate community-led discussions that turn individual reading into collective intellectual growth, fostering the critical thinking skills required to lead in a complex world.",
     category: "sage",
   },
   {
     id: "club",
     title: "IAIF Club",
-    image: null,
+    image: "/images/IAIF-club.png",
     summary:
       "Campus clubs in colleges and universities fostering industry-academia collaboration.",
     description:
-      "Form IAIF clubs in university, institute, and college campuses & through community centers to drive industry-academia collaboration, entrepreneurship, and applied research.",
+      "IAIF Clubs established across university, institute, and college campuses drive measurable outcomes: improved placement conversion rates, higher live-project completion rates, growing hackathon and competition wins, and expanding professional-network growth for members. These clubs create a self-sustaining local loop of industry-academia collaboration, entrepreneurship, and applied research — building the next generation of Atmanirbhar Bharat leaders.",
     category: "terracotta",
   },
 ];
@@ -429,7 +429,7 @@ export const CAROUSEL_ITEMS = [
     tag: "Workshop",
     title: "Faculty Development Programs",
     description:
-      "Continuous education workshops keeping faculty abreast of the latest industrial processes.",
+      "On Demand education workshops keeping faculty current with modern industry trends, emerging technologies, and evolving market skill requirements.",
   },
   {
     tag: "Strategy",

@@ -127,7 +127,7 @@ export default function Header() {
                   showTransparent ? "text-gold/90" : "text-terracotta"
                 }`}
               >
-                Foundation
+                Forum
               </span>
             </Link>
 

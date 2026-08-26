@@ -4,20 +4,19 @@ import StatCounter from "@/components/StatCounter";
 import ProgramCard from "@/components/ProgramCard";
 import Testimonial from "@/components/Testimonial";
 import ScrollCarousel from "@/components/ScrollCarousel";
-import Newsletter from "@/components/Newsletter";
 import SectionReveal from "@/components/SectionReveal";
 import { SITE, IMPACT_STATS, PROGRAMS } from "@/lib/constants";
 
 // Metadata for SEO
 export const metadata = {
-  title: "IAIF — Industry-Academia Interaction Foundation",
+  title: "IAIF — Industry-Academia Interaction Forum",
   description:
     "Bridging Industry and Research Experts with Academia — empowering students for entrepreneurship and research to be industry ready.",
 };
 
 export default function Home() {
-  // Only display the ones with images on the homepage for visual premium feel
-  const featuredPrograms = PROGRAMS.filter((p) => p.image);
+  // Select 3 featured programs for the homepage grid
+  const featuredPrograms = PROGRAMS.filter((p) => p.image).slice(0, 3);
 
   return (
     <div className="space-y-0">
@@ -153,36 +152,6 @@ export default function Home() {
 
       {/* 6. Horizontal Scroll-Snap Carousel */}
       <ScrollCarousel />
-
-      {/* 7. Transparency Strip */}
-      <section className="bg-navy text-white py-12 overflow-hidden border-t border-white/10">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-8">
-            {/* Badges */}
-            <div className="flex flex-wrap justify-center items-center gap-6 lg:gap-10 text-xs font-sans tracking-[0.15em] uppercase text-ivory/60 font-semibold">
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-gold rounded-full" /> Registered
-                Trust
-              </span>
-              <span className="w-px h-4 bg-white/10 hidden sm:block" />
-              <span className="flex items-center gap-2">
-                <span className="w-2 h-2 bg-gold rounded-full" /> Zero-Profit
-                Initiative
-              </span>
-            </div>
-
-            {/* Annual Report CTA */}
-            <Link
-              href="/impact"
-              className="text-xs font-sans uppercase tracking-[0.1em] text-white hover:text-gold transition-colors font-semibold border-b border-gold pb-1">
-              View Our Impact &rarr;
-            </Link>
-          </div>
-        </div>
-      </section>
-
-      {/* 8. Newsletter Signup */}
-      <Newsletter />
     </div>
   );
 }

@@ -250,7 +250,7 @@ function ProgramDetailRow({ program, idx, isEven, accentColor }) {
     pbl: "Solving real industry problems in master's, PhD, and undergraduate projects.",
     lectures: "Inculcating integrity, corporate ethics, and advanced tech competence.",
     curriculum: "Aligning course syllabi to meet contemporary global hiring needs.",
-    faculty: "Enabling continuous professional development on Industrial processes.",
+    faculty: "Providing On Demand professional development on modern industry trends, emerging technologies, and evolving market skill requirements — empowering faculty to modernize course syllabi, adopt industry tools, and embed practical projects.",
     ethics: "Instilling professional integrity and ethical conduct in young leaders.",
     reading: "Collaborating with RBCL and others to support personality and Indian culture reading.",
     club: "Establishing local campus loops to drive Atmanirbhar Bharat projects.",
@@ -259,7 +259,7 @@ function ProgramDetailRow({ program, idx, isEven, accentColor }) {
   const measurableOutcome =
     program.category === "sage"
       ? "Institutionalized skill loop that improves placement trajectory and research depth."
-      : "Functional prototype creation and character-driven student portfolios ready for MNC recruitment.";
+      : "Functional-prototype creation, character-driven student qualities, improved skill-match scores, higher campus recruitment conversion rates, and stronger internship-to-offer outcomes.";
 
   const accentClass = accentColor === "sage" ? "bg-sage" : "bg-terracotta";
   const accentTextClass = accentColor === "sage" ? "text-sage" : "text-terracotta";
