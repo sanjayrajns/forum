@@ -174,9 +174,9 @@ export const PROGRAMS = [
     title: "Faculty Development",
     image: "/images/faculty-development-image.png",
     summary:
-      "On Demand education workshops to keep faculty abreast of modern industry trends.",
+      "On demand education workshops for faculty members to help them stay abreast of the latest industrial processes.",
     description:
-      "Our On Demand faculty development programs provide instructors with deep insights into emerging industry technologies, modern management frameworks, and current corporate expectations. By delivering these workshops, we empower faculty to modernize their teaching methodology, incorporate live industry projects, and better mentor students for competitive career landscapes — ultimately boosting the institution’s overall quality of education and research output.",
+      "On demand education workshops for faculty members to help them stay abreast of the latest industrial processes.",
     category: "sage",
   },
   {

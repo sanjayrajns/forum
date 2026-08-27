@@ -250,14 +250,30 @@ function ProgramDetailRow({ program, idx, isEven, accentColor }) {
     pbl: "Solving real industry problems in master's, PhD, and undergraduate projects.",
     lectures: "Inculcating integrity, corporate ethics, and advanced tech competence.",
     curriculum: "Aligning course syllabi to meet contemporary global hiring needs.",
-    faculty: "Providing On Demand professional development on modern industry trends, emerging technologies, and evolving market skill requirements — empowering faculty to modernize course syllabi, adopt industry tools, and embed practical projects.",
+    faculty: "Update faculty knowledge on modern industry trends and emerging technologies. Align college curricula with current market skill requirements",
     ethics: "Instilling professional integrity and ethical conduct in young leaders.",
-    reading: "Collaborating with RBCL and others to support personality and Indian culture reading.",
+    reading: "Collaborating with RBCL and others to support and Foster a vibrant, active community of readers. Translate reading into tangible community learning",
     club: "Establishing local campus loops to drive Atmanirbhar Bharat projects.",
   }[program.id];
 
   const measurableOutcome =
-    program.category === "sage"
+    program.id === "ideathons"
+      ? "Clear articulation of problem statements, solution options Pitch competence, creation and soft skill improvements like Teamwork, Time Management etc"
+      : program.id === "hackathons"
+      ? "Functional prototype creation and character-driven student qualities to make them industry Ready"
+      : program.id === "curriculum"
+      ? "Improved Skill match score , campus recruitments, Internship conversions, Certificate pass rates"
+      : program.id === "ethics"
+      ? "Improved ethical Reasoning & decision-making, civic engagement , moral judgement, empathy, Integrity"
+      : program.id === "club"
+      ? "Improved Placement conversion rates, live project completion metrics, Hackathon and competition wins and professional network growth"
+      : program.id === "lectures"
+      ? "Ability to use real-world ideas in homework or projects, Better grasp on current Industry and Technical trends, Better Career clarity"
+      : program.id === "faculty"
+      ? "course syllabi revised to include new industry tools or frameworks. New case studies, datasets, or practical projects integrated into active lesson calendars"
+      : program.id === "reading"
+      ? "Growth of active subscriber base, Increase in participation in voluntary reading reflection programs"
+      : program.category === "sage"
       ? "Institutionalized skill loop that improves placement trajectory and research depth."
       : "Functional-prototype creation, character-driven student qualities, improved skill-match scores, higher campus recruitment conversion rates, and stronger internship-to-offer outcomes.";
 

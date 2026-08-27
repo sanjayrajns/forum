@@ -34,7 +34,7 @@ export default function Hero() {
   return (
     <section
       ref={sectionRef}
-      className="relative w-full min-h-[100svh] flex items-end bg-navy overflow-hidden">
+      className="relative w-full min-h-[70vh] md:min-h-[75vh] flex items-center bg-navy overflow-hidden">
       {/* ─── Background Image with Parallax ─────────────── */}
       <div
         className="absolute inset-0 z-0 will-change-transform"
@@ -76,13 +76,13 @@ export default function Hero() {
       />
 
       {/* ─── Decorative Gold Corner Accents ─────────────── */}
-      <div className="absolute top-28 left-6 lg:left-12 z-[5] pointer-events-none">
+      <div className="absolute top-20 left-6 lg:left-12 z-[5] pointer-events-none">
         <div
           className={`transition-all duration-1000 delay-700 ${loaded ? "opacity-100" : "opacity-0"}`}>
           <div className="w-12 h-12 border-t border-l border-gold/20" />
         </div>
       </div>
-      <div className="absolute bottom-28 right-6 lg:right-12 z-[5] pointer-events-none">
+      <div className="absolute bottom-12 right-6 lg:right-12 z-[5] pointer-events-none">
         <div
           className={`transition-all duration-1000 delay-900 ${loaded ? "opacity-100" : "opacity-0"}`}>
           <div className="w-12 h-12 border-b border-r border-gold/20" />
@@ -94,11 +94,11 @@ export default function Hero() {
       <div className="absolute bottom-1/3 left-1/4 w-[300px] h-[300px] bg-terracotta/[0.03] rounded-full blur-[80px] z-[4] pointer-events-none" />
 
       {/* ─── Main Content ──────────────────────────────── */}
-      <div className="relative z-10 w-full pb-16 md:pb-24 lg:pb-28 pt-32 md:pt-40">
+      <div className="relative z-10 w-full pb-8 md:pb-12 pt-24 md:pt-28">
         <div className="max-w-7xl mx-auto px-5 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-end">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-end">
             {/* ─── Left: Text Content ────────────────────── */}
-            <div className="lg:col-span-8 xl:col-span-7 space-y-7 md:space-y-8">
+            <div className="lg:col-span-8 xl:col-span-7 space-y-4 md:space-y-5">
               {/* Eyebrow Tag */}
               <div
                 className={`transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
@@ -107,9 +107,9 @@ export default function Hero() {
                     : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "200ms" }}>
-                <span className="inline-flex items-center gap-3 text-[10px] sm:text-[11px] font-sans uppercase tracking-[0.2em] text-gold font-bold">
+                <span className="inline-flex items-center gap-3 text-[10px] sm:text-[11px] md:text-xs font-sans uppercase tracking-[0.2em] text-ivory/80 font-bold">
                   <span className="w-8 h-px bg-gold/50" />
-                  Empowering Students for Entrepreneurship &amp; Research
+                  Bridging Industry &amp; Research Experts with Academia
                 </span>
               </div>
 
@@ -121,16 +121,15 @@ export default function Hero() {
                     : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "350ms" }}>
-                <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-medium text-white tracking-tight leading-[1.05]">
-                  Bridging Industry{" "}
-                  <span className="italic font-light text-gold/90">&amp;</span>
-                  <br className="hidden sm:block" /> Research Experts
-                  <br className="hidden sm:block" />{" "}
+                <h1 className="font-serif text-[2.5rem] sm:text-5xl md:text-6xl lg:text-7xl font-medium text-amber-400 tracking-tight leading-[1.05]">
+                  Empowering Students for{" "}
+                  <br className="hidden sm:block" />
                   <span className="relative inline-block">
-                    with Academia
+                    Entrepreneurship{" "}
+                    <span className="italic font-light text-white/90">&amp;</span> Research
                     {/* Animated underline */}
                     <span
-                      className={`absolute bottom-1 md:bottom-2 left-0 h-[2px] bg-gradient-to-r from-gold to-gold/30 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+                      className={`absolute bottom-1 md:bottom-2 left-0 h-[2px] bg-gradient-to-r from-amber-400 to-amber-400/30 transition-all duration-1000 ease-[cubic-bezier(0.16,1,0.3,1)] ${
                         loaded ? "w-full" : "w-0"
                       }`}
                       style={{ transitionDelay: "1200ms" }}
@@ -147,7 +146,7 @@ export default function Hero() {
                     : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "500ms" }}>
-                <p className="font-sans text-base sm:text-lg text-ivory/65 leading-relaxed max-w-xl font-light">
+                <p className="font-sans text-base sm:text-lg text-white opacity-100 leading-relaxed max-w-xl font-normal">
                   {SITE.heroSubline}
                 </p>
               </div>
@@ -212,35 +211,13 @@ export default function Hero() {
                     : "opacity-0 translate-y-8"
                 }`}
                 style={{ transitionDelay: "800ms" }}>
-                {/* <div className="space-y-4 border-l border-white/10 pl-8">
-                  {[
-                    { value: "9+", label: "Active Programs" },
-                    { value: "100%", label: "Volunteer-Driven" },
-                    { value: "3", label: "Stakeholder Groups" },
-                  ].map((stat, idx) => (
-                    <div
-                      key={stat.label}
-                      className="group flex items-center gap-4 py-2 hover:translate-x-1 transition-transform duration-300"
-                    >
-                      <span className="font-serif text-2xl xl:text-3xl text-gold font-medium tabular-nums leading-none">
-                        {stat.value}
-                      </span>
-                      <div>
-                        <span className="text-[10px] font-sans uppercase tracking-[0.15em] text-ivory/40 font-medium">
-                          {stat.label}
-                        </span>
-                        <div className="w-8 h-px bg-gold/20 group-hover:w-12 transition-all duration-300 mt-1" />
-                      </div>
-                    </div>
-                  ))}
-                </div> */}
               </div>
             </div>
           </div>
 
           {/* ─── Bottom Strip: Trust Badges ─────────────── */}
           <div
-            className={`mt-12 md:mt-16 pt-6 border-t border-white/8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
+            className={`mt-8 md:mt-10 pt-4 border-t border-white/8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
               loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
             }`}
             style={{ transitionDelay: "950ms" }}>
@@ -264,7 +241,7 @@ export default function Hero() {
 
       {/* ─── Scroll Indicator ──────────────────────────── */}
       <div
-        className={`absolute bottom-6 md:bottom-8 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 ${
+        className={`absolute bottom-4 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 ${
           loaded ? "opacity-100" : "opacity-0"
         }`}
         style={{ transitionDelay: "1200ms" }}>
@@ -272,7 +249,7 @@ export default function Hero() {
           <span className="text-[9px] font-sans uppercase tracking-[0.3em] text-ivory/25 font-medium">
             Scroll
           </span>
-          <div className="w-px h-8 relative overflow-hidden">
+          <div className="w-px h-6 relative overflow-hidden">
             <div className="absolute top-0 left-0 w-full h-full bg-ivory/10" />
             <div className="absolute top-0 left-0 w-full animate-scroll-line bg-gold/50" />
           </div>

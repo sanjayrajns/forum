@@ -3,14 +3,19 @@ import Image from "next/image";
 export default function ProgramVisual({ id, title, image, isSage }) {
   // If we have an image, render it
   if (image) {
+    const isContain = id === "curriculum" || id === "club" || image.includes("circulum") || image.includes("club") || image.includes("IAIF-club");
     return (
-      <div className="relative aspect-square w-full border border-hairline bg-card overflow-hidden group">
+      <div className="relative aspect-square w-full border border-hairline bg-card overflow-hidden group flex items-center justify-center">
         <Image
           src={image}
           alt={title}
           fill
           sizes="(max-w-768px) 100vw, 40vw"
-          className="object-cover filter saturate-[0.85] contrast-[1.02] transition-transform duration-500 ease-out group-hover:scale-102"
+          className={`${
+            isContain
+              ? "object-contain p-4 sm:p-6 filter saturate-[0.95] contrast-[1.02] transition-transform duration-500 ease-out group-hover:scale-98"
+              : "object-cover filter saturate-[0.85] contrast-[1.02] transition-transform duration-500 ease-out group-hover:scale-102"
+          }`}
         />
         {/* Subtle warm overlay */}
         <div className="absolute inset-0 bg-navy/5 mix-blend-multiply pointer-events-none" />

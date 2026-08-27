@@ -116,102 +116,151 @@ export default function AboutPage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          <div className="space-y-12 md:space-y-16">
+            {[
+              {
+                name: "Suresh Nayak",
+                role: "Core Member",
+                bio: "A distinguished professional committed to bridging the gap between industry and academia, volunteering expertise to empower the next generation of industry-ready leaders in Bharat.",
+                image: null,
+                linkedin: null,
+              },
+              {
+                name: "Shivanand Hiremath",
+                role: "Core Member",
+                titleSub: "SAP Innovation & AI Architect | 28+ Years IT Experience",
+                bio: "SAP Innovation & AI Strategist with 28+ years of IT experience. He shapes roadmaps and use cases working with business leaders, architects AI & automation-infused solutions, drives co-innovation with SAP, owns market-ready Validation Partner Use Cases (VPUCs), and leads end-to-end deployment via an 'Adopt & Adapt' methodology.",
+                subBio: "He hosts Customer Leadership & C-suite steering AI strategy discussions to convert vision into measurable value considering Desirability, Viability, and Feasibility, while managing Analyst Relations to shape market narratives and influence key industry reports.",
+                valueDrivers: [
+                  "FTE Redeployment",
+                  "Cycle Time Reduction",
+                  "Cost-per-Transaction Improvement",
+                  "Error Rate Reduction",
+                  "First Time Fix",
+                  "Clean Core Alignment",
+                ],
+                image: "/images/shivanand-hiremanth.jpg",
+                linkedin: "https://www.linkedin.com/in/shivanand-hiremath-7a75695",
+              },
+              {
+                name: "Dr. Jayesh Barve",
+                role: "Core Member",
+                titleSub: "FNAE, ISA Fellow | Leading Researcher at GE Vernova Advanced Research",
+                bio: "Dr. Jayesh Barve (FNAE, ISA Fellow) is a leading researcher at GE Vernova Advanced Research, Bangalore, with over 32 years of combined experience spanning industrial R&D (>18 years) and academia (>14 years). He holds a PhD and MTech in Systems & Controls from IIT Bombay and a BE from Gujarat University.",
+                subBio: "Specializing in industrial controls, optimization, IIoT, digital twin, and smart systems, Dr. Barve has led major global technology projects across power generation, renewables, oil & gas, and manufacturing — delivering ~20 commercialized technologies, over 21 patents, and 51+ published papers. His academic tenure includes roles as Director and Professor at Adani Institute and Nirma University, guiding over 80 PhD, PG, and UG projects. Active in IEEE, ISA, and IFAC, he holds prestigious global leadership awards alongside INAE and ISA Fellowships.",
+                valueDrivers: [
+                  "32+ Yrs Experience (R&D & Academia)",
+                  "IIT Bombay PhD & MTech",
+                  "21+ Patents & 20 Commercialized Tech",
+                  "51+ Research Papers",
+                  "INAE & ISA Fellow",
+                ],
+                image: "/images/jayesh-barve.jpg",
+                linkedin: "https://www.linkedin.com/in/dr-jayesh-barve-90445323",
+              },
+            ].map((member, idx) => (
+              <SectionReveal key={member.name} delay={idx * 100}>
+                <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-stretch">
+                  {/* Left Card: Image */}
+                  <div className="lg:col-span-5 bg-card border border-hairline relative min-h-[300px] sm:min-h-[360px] overflow-hidden group hover:border-gold/40 transition-all duration-300 shadow-sm flex items-center justify-center">
+                    {member.image ? (
+                      <>
+                        <Image
+                          src={member.image}
+                          alt={member.name}
+                          fill
+                          quality={95}
+                          sizes="(max-width: 1024px) 100vw, 500px"
+                          className="object-cover object-center filter saturate-[0.95] contrast-[1.02] transition-transform duration-500 group-hover:scale-105"
+                        />
+                        <div className="absolute inset-0 bg-navy/5 mix-blend-multiply pointer-events-none" />
+                      </>
+                    ) : (
+                      <div className="w-full h-full flex flex-col items-center justify-center p-8 bg-gradient-to-br from-card via-ivory to-card text-center space-y-4">
+                        <div className="w-24 h-24 rounded-full border-2 border-gold/40 bg-navy/5 flex items-center justify-center font-serif text-3xl text-navy font-bold">
+                          {member.name.split(" ").map((n) => n[0]).join("")}
+                        </div>
+                        <span className="text-xs font-sans uppercase tracking-[0.15em] text-navy/40 font-semibold">
+                          IAIF Core Member
+                        </span>
+                      </div>
+                    )}
+                    {/* Golden accent corners */}
+                    <div className="absolute top-4 left-4 w-3 h-3 border-t border-l border-gold/60" />
+                    <div className="absolute top-4 right-4 w-3 h-3 border-t border-r border-gold/60" />
+                    <div className="absolute bottom-4 left-4 w-3 h-3 border-b border-l border-gold/60" />
+                    <div className="absolute bottom-4 right-4 w-3 h-3 border-b border-r border-gold/60" />
+                  </div>
 
-            {/* Suresh Nayak */}
-            <SectionReveal delay={0}>
-              <div className="bg-card border border-hairline p-8 space-y-6 hover:border-gold/30 transition-all duration-300 h-full flex flex-col">
-                <div className="space-y-3">
-                  <div className="w-12 h-0.5 bg-terracotta" />
-                  <h3 className="font-serif text-2xl font-medium text-navy tracking-tight">
-                    Suresh Nayak
-                  </h3>
-                  <p className="text-[10px] font-sans uppercase tracking-[0.15em] text-terracotta font-bold">
-                    Core Member
-                  </p>
-                </div>
-                <p className="text-sm font-sans text-ink/70 leading-relaxed font-light flex-grow">
-                  A distinguished professional committed to bridging the gap between industry and academia, volunteering expertise to empower the next generation of industry-ready leaders in Bharat.
-                </p>
-              </div>
-            </SectionReveal>
+                  {/* Right Card: Content */}
+                  <div className="lg:col-span-7 bg-card border border-hairline p-8 md:p-10 space-y-6 flex flex-col justify-between hover:border-gold/40 transition-all duration-300 shadow-sm">
+                    <div className="space-y-4">
+                      <div className="flex items-center gap-3">
+                        <span className="w-8 h-0.5 bg-terracotta" />
+                        <span className="text-[11px] font-sans uppercase tracking-[0.2em] text-terracotta font-bold">
+                          {member.role}
+                        </span>
+                      </div>
+                      <h3 className="font-serif text-3xl md:text-4xl font-medium text-navy tracking-tight">
+                        {member.name}
+                      </h3>
+                      {member.titleSub && (
+                        <p className="text-xs font-sans uppercase tracking-wider text-gold font-bold">
+                          {member.titleSub}
+                        </p>
+                      )}
+                      <p className="text-sm sm:text-base font-sans text-ink/80 leading-relaxed font-light">
+                        {member.bio}
+                      </p>
+                      {member.subBio && (
+                        <p className="text-sm sm:text-base font-sans text-ink/75 leading-relaxed font-light">
+                          {member.subBio}
+                        </p>
+                      )}
+                      {member.valueDrivers && member.valueDrivers.length > 0 && (
+                        <div className="pt-2 space-y-2">
+                          <span className="text-[10px] font-sans uppercase tracking-[0.15em] text-navy/50 font-bold block">
+                            Focused Value Drivers:
+                          </span>
+                          <div className="flex flex-wrap gap-2">
+                            {member.valueDrivers.map((driver) => (
+                              <span
+                                key={driver}
+                                className="inline-block text-[11px] font-sans px-2.5 py-1 bg-ivory border border-hairline text-navy/80 font-medium rounded-xs"
+                              >
+                                {driver}
+                              </span>
+                            ))}
+                          </div>
+                        </div>
+                      )}
+                    </div>
 
-            {/* Shivanand Hiremath */}
-            <SectionReveal delay={100}>
-              <div className="bg-card border border-hairline p-8 space-y-6 hover:border-gold/30 transition-all duration-300 h-full flex flex-col">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-gold/30 shadow-md">
-                  <Image
-                    src="/images/shivanand-hiremanth.jpg"
-                    alt="Shivanand Hiremath"
-                    fill
-                    className="object-cover"
-                  />
+                    {member.linkedin ? (
+                      <div className="pt-6 border-t border-hairline/60">
+                        <a
+                          href={member.linkedin}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="inline-flex items-center gap-2.5 px-5 py-2.5 bg-navy text-ivory text-xs font-sans uppercase tracking-wider font-semibold hover:bg-gold hover:text-navy transition-all duration-300"
+                        >
+                          <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                          </svg>
+                          LinkedIn Profile
+                        </a>
+                      </div>
+                    ) : (
+                      <div className="pt-6 border-t border-hairline/60">
+                        <span className="text-[11px] font-sans uppercase tracking-wider text-navy/40 font-semibold">
+                          IAIF Volunteer Leader
+                        </span>
+                      </div>
+                    )}
+                  </div>
                 </div>
-                <div className="space-y-2">
-                  <div className="w-12 h-0.5 bg-terracotta" />
-                  <h3 className="font-serif text-2xl font-medium text-navy tracking-tight">
-                    Shivanand Hiremath
-                  </h3>
-                  <p className="text-[10px] font-sans uppercase tracking-[0.15em] text-terracotta font-bold">
-                    Core Member
-                  </p>
-                </div>
-                <p className="text-sm font-sans text-ink/70 leading-relaxed font-light flex-grow">
-                  A seasoned industry professional with decades of experience in driving organizational excellence and mentoring young professionals toward impactful careers.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.12em] text-navy font-semibold hover:text-gold transition-colors duration-200 mt-auto"
-                  aria-label="Shivanand Hiremath LinkedIn Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                  LinkedIn Profile
-                </a>
-              </div>
-            </SectionReveal>
-
-            {/* Dr. Jayesh Barve */}
-            <SectionReveal delay={200}>
-              <div className="bg-card border border-hairline p-8 space-y-6 hover:border-gold/30 transition-all duration-300 h-full flex flex-col">
-                <div className="relative w-28 h-28 rounded-full overflow-hidden border-2 border-gold/30 shadow-md">
-                  <Image
-                    src="/images/jayesh-barve.jpg"
-                    alt="Dr. Jayesh Barve"
-                    fill
-                    className="object-cover"
-                  />
-                </div>
-                <div className="space-y-2">
-                  <div className="w-12 h-0.5 bg-terracotta" />
-                  <h3 className="font-serif text-2xl font-medium text-navy tracking-tight">
-                    Dr. Jayesh Barve
-                  </h3>
-                  <p className="text-[10px] font-sans uppercase tracking-[0.15em] text-terracotta font-bold">
-                    Core Member
-                  </p>
-                </div>
-                <p className="text-sm font-sans text-ink/70 leading-relaxed font-light flex-grow">
-                  An accomplished academician and researcher with deep expertise in emerging technologies and academia-industry collaboration, dedicated to shaping future innovators.
-                </p>
-                <a
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[11px] font-sans uppercase tracking-[0.12em] text-navy font-semibold hover:text-gold transition-colors duration-200 mt-auto"
-                  aria-label="Dr. Jayesh Barve LinkedIn Profile"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  <svg className="w-4 h-4" fill="currentColor" viewBox="0 0 24 24">
-                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.779-1.75-1.75s.784-1.75 1.75-1.75 1.75.779 1.75 1.75-.784 1.75-1.75 1.75zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
-                  </svg>
-                  LinkedIn Profile
-                </a>
-              </div>
-            </SectionReveal>
-
+              </SectionReveal>
+            ))}
           </div>
         </div>
       </section>
