@@ -3,6 +3,8 @@
 import { useState } from "react";
 import { SITE } from "@/lib/constants";
 
+const FORMSPREE_ENDPOINT = process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT;
+
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",
@@ -12,18 +14,41 @@ export default function ContactPage() {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (formData.name && formData.email && formData.message) {
-      setSubmitted(true);
-      setFormData({
-        name: "",
-        email: "",
-        phone: "",
-        role: "Institution",
-        message: "",
+    setLoading(true);
+    setError(null);
+
+    try {
+      const res = await fetch(FORMSPREE_ENDPOINT, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          role: formData.role,
+          message: formData.message,
+        }),
       });
+
+      if (res.ok) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", phone: "", role: "Institution", message: "" });
+      } else {
+        const data = await res.json();
+        setError(data?.errors?.[0]?.message || "Something went wrong. Please try again.");
+      }
+    } catch {
+      setError("Network error. Please check your connection and try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -167,12 +192,29 @@ export default function ContactPage() {
                     />
                   </div>
 
+                  {error && (
+                    <p className="text-xs font-sans text-red-600 border border-red-200 bg-red-50 px-4 py-3 leading-relaxed">
+                      {error}
+                    </p>
+                  )}
+
                   <div>
                     <button
                       type="submit"
-                      className="w-full py-4 bg-navy text-ivory text-xs font-sans uppercase tracking-[0.15em] font-semibold border border-navy hover:bg-transparent hover:text-navy hover:border-gold transition-editorial duration-300"
+                      disabled={loading}
+                      className="w-full py-4 bg-navy text-ivory text-xs font-sans uppercase tracking-[0.15em] font-semibold border border-navy hover:bg-transparent hover:text-navy hover:border-gold transition-editorial duration-300 disabled:opacity-60 disabled:cursor-not-allowed disabled:hover:bg-navy disabled:hover:text-ivory disabled:hover:border-navy"
                     >
-                      Submit Query
+                      {loading ? (
+                        <span className="inline-flex items-center justify-center gap-2">
+                          <svg className="animate-spin w-4 h-4" fill="none" viewBox="0 0 24 24">
+                            <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="4" />
+                            <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8z" />
+                          </svg>
+                          Sending...
+                        </span>
+                      ) : (
+                        "Submit Query"
+                      )}
                     </button>
                   </div>
                 </form>
