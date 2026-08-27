@@ -125,7 +125,7 @@ export default function ValueProposition() {
                       isActive ? "bg-terracotta/15 text-terracotta border border-terracotta/20" : "bg-navy/5 text-ink/60"
                     }`}
                   >
-                    {tab.num} &bull; {tab.badge}
+                    {tab.badge}
                   </span>
                   <span
                     className={`p-2.5 rounded-full transition-colors ${
@@ -194,14 +194,7 @@ export default function ValueProposition() {
               </p>
             </div>
             
-            <div className="self-start sm:self-auto flex-shrink-0 bg-white/5 border border-gold/30 px-3.5 py-2 sm:px-5 sm:py-3 rounded-sm text-left sm:text-center flex sm:flex-col items-center gap-2 sm:gap-0">
-              <span className="font-serif text-2xl sm:text-3xl text-gold font-bold leading-none">
-                0{activeTabMeta?.num}
-              </span>
-              <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-widest text-ivory/60">
-                Pillar Category
-              </span>
-            </div>
+
           </div>
         </div>
 
@@ -213,12 +206,9 @@ export default function ValueProposition() {
               className="group relative bg-card border border-hairline p-5 sm:p-7 hover:border-gold/40 hover:shadow-xl hover:-translate-y-1 transition-all duration-300 flex flex-col justify-between"
             >
               <div className="space-y-3 sm:space-y-4">
-                <div className="flex items-center justify-between">
+                <div>
                   <span className="text-[9px] sm:text-[10px] font-sans uppercase tracking-widest font-bold text-terracotta bg-terracotta/10 px-2.5 py-0.5 rounded-xs">
                     {CATEGORY_BADGES[activeTab]?.[idx] || "Advantage"}
-                  </span>
-                  <span className="font-serif text-xs font-bold text-gold/80">
-                    0{idx + 1}
                   </span>
                 </div>
 

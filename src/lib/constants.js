@@ -252,7 +252,7 @@ export const STAKEHOLDERS = {
   institutions: {
     title: "For Academic Institutions",
     subtitle:
-      "Elevate institution brand, curriculum relevance, and placement records",
+      "Elevate institution brand, curriculum relevance, and national contribution",
     benefits: [
       {
         title: "Curriculum Alignment",
@@ -386,6 +386,11 @@ export const EXECUTION_STRATEGY = [
     title: "Industry Impact",
     description:
       "Every activity is tied back to creating measurable outcomes — ensuring students develop entrepreneurial skills and research capabilities.",
+  },
+  {
+    title: "Nation Building",
+    description:
+      "Every activity is tied back to the vision of Samartha Bharat, ensuring students see their career as a contribution to national progress and self-reliance.",
   },
 ];
 

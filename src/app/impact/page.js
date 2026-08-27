@@ -238,12 +238,12 @@ export default function ImpactPage() {
               Execution Strategy
             </h2>
             <p className="text-sm font-sans text-ink/60 leading-relaxed font-light">
-              Four tactical pillars ensuring sustainable development, policy
+              Five tactical pillars ensuring sustainable development, policy
               alignment, and national contribution.
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-8">
             {EXECUTION_STRATEGY.map((strat, idx) => (
               <SectionReveal key={idx} delay={idx * 100}>
                 <div className="bg-card border border-hairline p-8 h-full space-y-4 hover:border-gold/30 transition-editorial duration-300">
