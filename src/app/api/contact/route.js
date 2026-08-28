@@ -1,9 +1,13 @@
 import { NextResponse } from "next/server";
 
-const FORMSPREE_ENDPOINT = process.env.FORMSPREE_ENDPOINT;
-
 export async function POST(request) {
-  if (!FORMSPREE_ENDPOINT) {
+  const endpoint = (
+    process.env.FORMSPREE_ENDPOINT ||
+    process.env.NEXT_PUBLIC_FORMSPREE_ENDPOINT ||
+    process.env.NEXT_PRIVATE_FORMSPREE_ENDPOINT
+  )?.trim();
+
+  if (!endpoint) {
     return NextResponse.json(
       { error: "Contact form is not configured." },
       { status: 500 }
@@ -13,7 +17,7 @@ export async function POST(request) {
   try {
     const body = await request.json();
 
-    const res = await fetch(FORMSPREE_ENDPOINT, {
+    const res = await fetch(endpoint, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

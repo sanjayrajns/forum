@@ -3,8 +3,6 @@
 import { useState } from "react";
 import { SITE } from "@/lib/constants";
 
-const FORMSPREE_ENDPOINT = process.env.NEXT_PRIVATE_FORMSPREE_ENDPOINT;
-
 export default function ContactPage() {
   const [formData, setFormData] = useState({
     name: "",

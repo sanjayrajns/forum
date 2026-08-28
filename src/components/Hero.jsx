@@ -215,44 +215,6 @@ export default function Hero() {
             </div>
           </div>
 
-          {/* ─── Bottom Strip: Trust Badges ─────────────── */}
-          <div
-            className={`mt-8 md:mt-10 pt-4 border-t border-white/8 transition-all duration-700 ease-[cubic-bezier(0.16,1,0.3,1)] ${
-              loaded ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"
-            }`}
-            style={{ transitionDelay: "950ms" }}>
-            <div className="flex flex-wrap items-center gap-x-8 gap-y-3 text-[10px] font-sans tracking-[0.15em] uppercase text-ivory/35 font-medium">
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-gold/50 rounded-full" />
-                Registered Trust
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-gold/50 rounded-full" />
-                Zero-Profit Initiative
-              </span>
-              <span className="flex items-center gap-2">
-                <span className="w-1.5 h-1.5 bg-gold/50 rounded-full" />
-                Expert-Led Mentorship
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* ─── Scroll Indicator ──────────────────────────── */}
-      <div
-        className={`absolute bottom-4 left-1/2 -translate-x-1/2 z-10 transition-all duration-700 ${
-          loaded ? "opacity-100" : "opacity-0"
-        }`}
-        style={{ transitionDelay: "1200ms" }}>
-        <div className="flex flex-col items-center gap-2">
-          <span className="text-[9px] font-sans uppercase tracking-[0.3em] text-ivory/25 font-medium">
-            Scroll
-          </span>
-          <div className="w-px h-6 relative overflow-hidden">
-            <div className="absolute top-0 left-0 w-full h-full bg-ivory/10" />
-            <div className="absolute top-0 left-0 w-full animate-scroll-line bg-gold/50" />
-          </div>
         </div>
       </div>
     </section>
