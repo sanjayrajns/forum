@@ -20,7 +20,7 @@ export const SITE = {
     whatsapp: "#",
     instagram: "#",
     linkedin: "#",
-    email: "contact@iaif.org",
+    email: "contact@iaif.in",
   },
 };
 

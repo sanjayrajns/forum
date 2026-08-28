@@ -119,25 +119,19 @@ export default function AboutPage() {
           <div className="space-y-12 md:space-y-16">
             {[
               {
-                name: "Suresh Nayak",
-                role: "Core Member",
-                bio: "A distinguished professional committed to bridging the gap between industry and academia, volunteering expertise to empower the next generation of industry-ready leaders in Bharat.",
-                image: null,
-                linkedin: null,
-              },
-              {
                 name: "Shivanand Hiremath",
                 role: "Core Member",
                 titleSub: "SAP Innovation & AI Architect | 28+ Years IT Experience",
                 bio: "SAP Innovation & AI Strategist with 28+ years of IT experience. He shapes roadmaps and use cases working with business leaders, architects AI & automation-infused solutions, drives co-innovation with SAP, owns market-ready Validation Partner Use Cases (VPUCs), and leads end-to-end deployment via an 'Adopt & Adapt' methodology.",
                 subBio: "He hosts Customer Leadership & C-suite steering AI strategy discussions to convert vision into measurable value considering Desirability, Viability, and Feasibility, while managing Analyst Relations to shape market narratives and influence key industry reports.",
                 valueDrivers: [
-                  "FTE Redeployment",
-                  "Cycle Time Reduction",
-                  "Cost-per-Transaction Improvement",
-                  "Error Rate Reduction",
-                  "First Time Fix",
-                  "Clean Core Alignment",
+                  "IIT BHU Alumni",
+                  "Strategy & Consulting",
+                  "Global SAP Transformation",
+                  "Design Thinking",
+                  "AI Strategist",
+                  "AI & Automation infused solution",
+                  "Mentoring & Coaching",
                 ],
                 image: "/images/shivanand-hiremanth.jpg",
                 linkedin: "https://www.linkedin.com/in/shivanand-hiremath-7a75695",

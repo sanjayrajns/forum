@@ -270,7 +270,7 @@ function ProgramDetailRow({ program, idx, isEven, accentColor }) {
       : program.id === "lectures"
       ? "Ability to use real-world ideas in homework or projects, Better grasp on current Industry and Technical trends, Better Career clarity"
       : program.id === "faculty"
-      ? "course syllabi revised to include new industry tools or frameworks. New case studies, datasets, or practical projects integrated into active lesson calendars"
+      ? "Course Syllabi Revised to Include New Industry Tools or Frameworks. New Case Studies, Datasets, or Practical Projects Integrated into Active Lesson Calendars"
       : program.id === "reading"
       ? "Growth of active subscriber base, Increase in participation in voluntary reading reflection programs"
       : program.category === "sage"
