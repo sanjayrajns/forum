@@ -16,24 +16,23 @@ export default function ProgramsPage() {
     <div className="pt-24 space-y-0">
 
       {/* ── Page Hero Header ───────────────────────────────────────── */}
-      <section className="relative bg-navy overflow-hidden min-h-[52vh] flex items-center">
+      <section className="relative bg-navy overflow-hidden min-h-[50vh] flex items-center border-b border-gold/25">
         {/* Grid pattern overlay */}
         <div
-          className="absolute inset-0 opacity-[0.04] pointer-events-none"
+          className="absolute inset-0 opacity-[0.03] pointer-events-none"
           style={{
             backgroundImage: `linear-gradient(to right, #FBF9F5 1px, transparent 1px), linear-gradient(to bottom, #FBF9F5 1px, transparent 1px)`,
             backgroundSize: "72px 72px",
           }}
         />
-        {/* Gold glow */}
-        <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-[600px] h-[600px] bg-gold/10 rounded-full blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-24 -left-24 w-80 h-80 bg-terracotta/10 rounded-full blur-3xl pointer-events-none" />
+        {/* Subtle ambient accent glow */}
+        <div className="absolute top-1/2 -translate-y-1/2 -right-40 w-[500px] h-[500px] bg-gold/5 rounded-full blur-2xl pointer-events-none" />
 
-        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-28 w-full">
+        <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8 py-20 md:py-24 w-full">
           <div className="max-w-3xl space-y-8 animate-fade-up">
             {/* Eyebrow */}
-            <span className="inline-flex items-center gap-3 text-xs font-sans uppercase tracking-[0.2em] text-gold font-bold bg-white/5 border border-gold/20 px-4 py-2 backdrop-blur-sm">
-              <span className="w-5 h-px bg-gold/60" />
+            <span className="inline-flex items-center gap-3 text-xs font-sans uppercase tracking-[0.2em] text-gold font-bold bg-white/5 border border-gold/30 px-4 py-2 backdrop-blur-md">
+              <span className="w-5 h-px bg-gold" />
               What We Do
             </span>
 
@@ -43,30 +42,33 @@ export default function ProgramsPage() {
               Initiatives
             </h1>
 
-            <p className="font-sans text-lg md:text-xl text-ivory/70 leading-relaxed max-w-2xl font-light">
+            <p className="font-sans text-lg md:text-xl text-ivory/90 leading-relaxed max-w-2xl font-light">
               We complement the education sector with industry veteran guidance — bridging classroom theory with global expectations through structured sprints, expert lectures, and curriculum alignments.
             </p>
 
             {/* Jump links */}
-            <div className="flex flex-wrap gap-3 pt-2">
+            <div className="flex flex-wrap gap-4 pt-3">
               <Link
                 href="#industry-sprints"
-                className="px-6 py-3 border border-white/20 text-xs font-sans uppercase tracking-[0.1em] text-ivory/80 hover:border-gold hover:text-gold transition-all duration-300 font-semibold"
+                className="group relative px-7 py-3.5 bg-gold/10 border border-gold/40 text-xs font-sans uppercase tracking-[0.15em] text-gold font-bold hover:bg-gold hover:text-navy transition-all duration-300 shadow-sm flex items-center gap-2.5"
               >
-                Industry Sprints
+                <span>Industry Sprints</span>
+                <svg className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
               </Link>
               <Link
                 href="#academia-modules"
-                className="px-6 py-3 border border-white/20 text-xs font-sans uppercase tracking-[0.1em] text-ivory/80 hover:border-gold hover:text-gold transition-all duration-300 font-semibold"
+                className="group relative px-7 py-3.5 bg-white/5 border border-white/20 text-xs font-sans uppercase tracking-[0.15em] text-ivory font-bold hover:border-gold hover:text-gold transition-all duration-300 shadow-sm flex items-center gap-2.5"
               >
-                Academia Modules
+                <span>Academia Modules</span>
+                <svg className="w-3.5 h-3.5 group-hover:translate-y-0.5 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
+                </svg>
               </Link>
             </div>
           </div>
         </div>
-
-        {/* Bottom fade into next section */}
-        <div className="absolute bottom-0 left-0 right-0 h-24 bg-gradient-to-t from-ivory to-transparent pointer-events-none" />
       </section>
 
       {/* ── Index Grid ─────────────────────────────────────────────── */}

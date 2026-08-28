@@ -189,7 +189,7 @@ export default function ValueProposition() {
               <h3 className="font-serif text-xl sm:text-2xl md:text-3xl font-medium tracking-tight text-ivory">
                 {currentStakeholder.title}
               </h3>
-              <p className="text-xs sm:text-sm font-sans text-ivory/80 font-light leading-relaxed">
+              <p className="text-xs sm:text-sm font-sans text-ivory font-normal leading-relaxed">
                 {currentStakeholder.subtitle}
               </p>
             </div>

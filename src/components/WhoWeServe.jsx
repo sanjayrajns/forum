@@ -104,7 +104,7 @@ export default function WhoWeServe() {
                 <span className="italic font-normal text-gold/80">Advantage</span>
               </h2>
             </div>
-            <p className="text-sm font-sans text-ivory/55 max-w-xs leading-relaxed font-light md:text-right">
+            <p className="text-sm font-sans text-ivory max-w-xs leading-relaxed font-normal md:text-right">
               Our structured interaction loops deliver profound, measurable impact for the three pillars of national development.
             </p>
           </div>
@@ -120,8 +120,8 @@ export default function WhoWeServe() {
                 onClick={() => handleTabChange(tab.key)}
                 className={`group relative flex-1 flex-shrink-0 sm:flex-shrink flex flex-col sm:flex-row items-center gap-2.5 sm:gap-3 px-5 py-4 sm:px-6 sm:py-6 transition-all duration-400 focus:outline-none text-left ${
                   isActive
-                    ? "bg-white/5"
-                    : "hover:bg-white/[0.03]"
+                    ? "bg-white/10"
+                    : "hover:bg-white/[0.05]"
                 }`}
               >
                 {/* Active top border */}
@@ -132,7 +132,7 @@ export default function WhoWeServe() {
                 />
                 <span
                   className={`transition-colors duration-400 ${
-                    isActive ? "text-gold" : "text-white/30 group-hover:text-white/50"
+                    isActive ? "text-gold" : "text-white/70 group-hover:text-white"
                   }`}
                 >
                   {tab.icon}
@@ -140,14 +140,14 @@ export default function WhoWeServe() {
                 <div>
                   <span
                     className={`block font-serif text-sm sm:text-base md:text-lg tracking-wide transition-colors duration-400 ${
-                      isActive ? "text-ivory" : "text-white/40 group-hover:text-white/70"
+                      isActive ? "text-white font-semibold" : "text-white/80 group-hover:text-white"
                     }`}
                   >
                     {STAKEHOLDERS[tab.key].title.replace("For ", "")}
                   </span>
                   <span
                     className={`block text-[9px] sm:text-[10px] font-sans uppercase tracking-widest mt-0.5 transition-colors duration-400 ${
-                      isActive ? "text-gold/70" : "text-white/25"
+                      isActive ? "text-gold font-bold" : "text-white/60"
                     }`}
                   >
                     {tab.num}
@@ -174,30 +174,30 @@ export default function WhoWeServe() {
             <div className="lg:col-span-5 space-y-8">
               {/* Big number stamp */}
               <div className="flex items-center gap-4">
-                <span className="font-serif text-[64px] sm:text-[80px] leading-none text-white/5 select-none font-bold">
+                <span className="font-serif text-[64px] sm:text-[80px] leading-none text-white/10 select-none font-bold">
                   {activeTabMeta?.num}
                 </span>
                 <div className="space-y-1">
-                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-ivory tracking-tight leading-snug">
+                  <h3 className="font-serif text-2xl sm:text-3xl md:text-4xl text-white font-medium tracking-tight leading-snug">
                     {currentStakeholder.title}
                   </h3>
-                  <p className="text-[10px] sm:text-xs font-sans text-gold uppercase tracking-widest font-medium">
+                  <p className="text-[10px] sm:text-xs font-sans text-gold uppercase tracking-widest font-bold">
                     {currentStakeholder.subtitle}
                   </p>
                 </div>
               </div>
 
-              <p className="text-sm sm:text-base font-sans text-ivory/65 font-light leading-relaxed border-l-2 border-gold/30 pl-5">
+              <p className="text-sm sm:text-base font-sans text-white font-normal leading-relaxed border-l-2 border-gold pl-5">
                 {DESCRIPTIONS[activeTab]}
               </p>
 
               {/* Accent line */}
               <div className="flex items-center gap-5 pt-4">
-                <div className="h-px bg-white/10 flex-grow" />
-                <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-white/30 whitespace-nowrap">
+                <div className="h-px bg-white/20 flex-grow" />
+                <span className="text-[10px] font-sans uppercase tracking-[0.2em] text-gold font-bold whitespace-nowrap">
                   {ACCENT_LABELS[activeTab]}
                 </span>
-                <div className="h-px bg-white/10 flex-grow" />
+                <div className="h-px bg-white/20 flex-grow" />
               </div>
             </div>
 
@@ -207,21 +207,21 @@ export default function WhoWeServe() {
                 {currentStakeholder.benefits.map((benefit, index) => (
                   <div
                     key={index}
-                    className="group relative bg-white/[0.04] border border-white/8 hover:bg-white/[0.07] hover:border-white/15 transition-all duration-400 p-7 overflow-hidden"
+                    className="group relative bg-white/[0.08] border border-white/20 hover:bg-white/[0.12] hover:border-gold/60 transition-all duration-400 p-7 overflow-hidden"
                   >
                     {/* Ghost number */}
-                    <span className="absolute bottom-3 right-4 font-serif text-5xl text-white/[0.04] font-bold leading-none select-none group-hover:text-white/[0.07] transition-colors duration-400">
+                    <span className="absolute bottom-3 right-4 font-serif text-5xl text-white/10 font-bold leading-none select-none group-hover:text-white/20 transition-colors duration-400">
                       {index + 1}
                     </span>
 
                     {/* Growing gold line */}
-                    <div className="w-8 h-0.5 bg-gold/40 group-hover:w-14 transition-all duration-500 mb-5" />
+                    <div className="w-8 h-0.5 bg-gold group-hover:w-14 transition-all duration-500 mb-5" />
 
                     <div className="relative z-10 space-y-3">
-                      <h4 className="font-serif text-lg text-ivory tracking-tight leading-snug">
+                      <h4 className="font-serif text-lg text-white font-semibold tracking-tight leading-snug">
                         {benefit.title}
                       </h4>
-                      <p className="text-sm font-sans text-white/55 leading-relaxed font-light">
+                      <p className="text-sm font-sans text-white leading-relaxed font-normal">
                         {benefit.description}
                       </p>
                     </div>
@@ -236,7 +236,7 @@ export default function WhoWeServe() {
       {/* ── Footer Band ────────────────────────────────────────── */}
       <div className="border-t border-white/10 relative z-10">
         <div className="max-w-7xl mx-auto px-6 lg:px-8 py-8 md:py-10 flex flex-col sm:flex-row items-center justify-between gap-6">
-          <p className="text-xs font-sans text-white/35 tracking-wider">
+          <p className="text-xs font-sans text-white font-medium tracking-wider">
             Structured to empower students, institutions &amp; experts alike.
           </p>
           <div className="flex items-center gap-2">
